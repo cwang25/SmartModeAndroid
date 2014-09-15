@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Switch
+        android:id="@+id/autoModeSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Auto Mode" />
+
+    <TextView
+        android:id="@+id/tagCheckFrequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/autoModeSwitch"
+        android:layout_below="@+id/autoModeSwitch"
+        android:layout_marginTop="30dp"
+        android:text="Last status checking is completed at : "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lastCheckedTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tagCheckFrequency"
+        android:layout_below="@+id/tagCheckFrequency"
+        android:text="13:00"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/currentModeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/currentModeTag"
+        android:layout_below="@+id/currentModeTag"
+        android:text="Mode"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/currentModeTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lastCheckedTime"
+        android:layout_below="@+id/lastCheckedTime"
+        android:layout_marginTop="38dp"
+        android:text="Current Mode: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/currentModeText" >
+
+        <ImageView
+            android:id="@+id/imageIndicator"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="indicator_of_service"
+            android:src="@drawable/green_logo_1_1_1" />
+
+        <TextView
+            android:id="@+id/imageButtonVibrateMainPanelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageButtonVibrateMainPanel"
+            android:layout_alignTop="@+id/imageButtonVibrateMainPanel"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="5dp"
+            android:text="@string/appwidget_vibrate_text" />
+
+        <TextView
+            android:id="@+id/imageButtonSilenceMainPanelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageButtonSilenceMainPanel"
+            android:layout_alignTop="@+id/imageButtonSilenceMainPanel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="1dp"
+            android:text="@string/appwidget_silence_text" />
+
+        <TextView
+            android:id="@+id/indicatorDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/imageIndicator"
+            android:layout_alignRight="@+id/imageButtonSilenceMainPanelText"
+            android:layout_marginBottom="25dp"
+            android:text="@string/normal"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <ImageButton
+            android:id="@+id/imageButtonSilenceMainPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@+id/imageIndicator"
+            android:layout_toRightOf="@+id/imageIndicator"
+            android:src="@drawable/ic_silence_bar" />
+
+        <ImageButton
+            android:id="@+id/imageButtonVibrateMainPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@+id/imageIndicator"
+            android:layout_toLeftOf="@+id/imageIndicator"
+            android:src="@drawable/ic_vibrate_bar" />
+
+        <Button
+            android:id="@+id/defaultSetButtonMain"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/default_set_text" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

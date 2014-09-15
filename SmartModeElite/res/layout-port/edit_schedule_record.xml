@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDFFDB" >
+
+     <TextView
+         android:id="@+id/scheduleIDTag"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:layout_marginLeft="10dp"
+         android:layout_marginTop="10dp"
+         android:text="Name: "
+         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editScheduleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/scheduleIDTag"
+        android:layout_alignBottom="@+id/scheduleIDTag"
+        android:layout_alignRight="@+id/editStartTime"
+        android:layout_toRightOf="@+id/scheduleIDTag"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/modesettingTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/scheduleIDTag"
+        android:layout_below="@+id/editScheduleName"
+        android:text="Mode Setting:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <SeekBar
+        android:id="@+id/ringtoneSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ringtoneTag"
+        android:layout_below="@+id/ringtoneTag" />
+
+    <TextView
+        android:id="@+id/musicTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ringtoneSeekBar"
+        android:layout_below="@+id/ringtoneSeekBar"
+        android:text="Music &amp; Videos:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <SeekBar
+        android:id="@+id/musicSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/musicTag"
+        android:layout_below="@+id/musicTag" />
+
+    <TextView
+        android:id="@+id/alarmTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/musicSeekBar"
+        android:layout_below="@+id/musicSeekBar"
+        android:text="Alarm:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <SeekBar
+        android:id="@+id/alarmSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/alarmTag"
+        android:layout_below="@+id/alarmTag" />
+
+    <Button
+        android:id="@+id/saveScheduleEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Save" />
+
+    <Button
+        android:id="@+id/cancelScheduleEdit"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/alarmSeekBar"
+        android:layout_alignTop="@+id/saveScheduleEdit"
+        android:text="Cancel" />
+
+    <TextView
+        android:id="@+id/startTimeBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/timeStart"
+        android:layout_alignBottom="@+id/timeStart"
+        android:layout_toRightOf="@+id/timeStart"
+        android:clickable="true"
+        android:text="00:00 AM"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/editStartTime"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/startTimeBoard"
+        android:layout_alignBottom="@+id/startTimeBoard"
+        android:layout_alignRight="@+id/saveScheduleEdit"
+        android:text="Edit" />
+
+    <TextView
+        android:id="@+id/timeEndTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/timeStart"
+        android:layout_below="@+id/editStartTime"
+        android:layout_marginTop="10dp"
+        android:text="Time End:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/endTimeBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/timeEndTag"
+        android:layout_alignBottom="@+id/timeEndTag"
+        android:layout_toRightOf="@+id/timeEndTag"
+        android:clickable="true"
+        android:text="00:00 AM"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/editEndTime"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/endTimeBoard"
+        android:layout_alignBottom="@+id/endTimeBoard"
+        android:layout_alignRight="@+id/saveScheduleEdit"
+        android:text="Edit" />
+
+    <TextView
+        android:id="@+id/notifcationTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/alarmSeekBar"
+        android:layout_below="@+id/alarmSeekBar"
+        android:text="Notification: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <SeekBar
+        android:id="@+id/notificationSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/notifcationTag"
+        android:layout_below="@+id/notifcationTag" />
+
+    <TextView
+        android:id="@+id/timeStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/notificationSeekBar"
+        android:layout_below="@+id/notificationSeekBar"
+        android:text="Time Start:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/ringtoneTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioGroupMode"
+        android:layout_below="@+id/radioGroupMode"
+        android:text="Ringtone:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/modesettingTag"
+        android:orientation="horizontal"
+        android:layout_below="@+id/modesettingTag" >
+
+        <RadioButton
+            android:id="@+id/radioSilience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Mute all" />
+
+        <RadioButton
+            android:id="@+id/radioVibrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vibrate" />
+
+        <RadioButton
+            android:id="@+id/radioNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/editAutoReplyBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/cancelScheduleEdit"
+        android:layout_alignBottom="@+id/cancelScheduleEdit"
+        android:layout_toLeftOf="@+id/saveScheduleEdit"
+        android:text="Edit Auto-Reply" />
+
+    <CheckBox
+        android:id="@+id/enableAutoReplyCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editScheduleName"
+        android:text="Enable Auto-Reply" />
+
+</RelativeLayout>

@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/widget_margin" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+        <TextView
+        android:id="@+id/appwidget_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="8dp"
+        android:contentDescription="@string/appwidget_text"
+        android:text="@string/appwidget_text"
+        android:textSize="12sp"
+        android:textStyle="bold|italic" />
+
+    <ImageButton
+        android:id="@+id/widgetImageSilenceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/widgetImageVibrateButton"
+        android:layout_below="@+id/widgetImageVibrateButton"
+        android:src="@drawable/ic_black_bar" />
+
+    <ImageButton
+        android:id="@+id/widgetImageVibrateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/widgetImageButton"
+        android:src="@drawable/ic_black_bar" />
+
+    <ImageButton
+        android:id="@+id/widgetImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/widgetImageVibrateButton"
+        android:src="@drawable/ic_launcher_3" />
+
+    <TextView
+        android:id="@+id/appwidget_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/widgetImageSilenceButton"
+        android:layout_alignTop="@+id/widgetImageSilenceButton"
+        android:layout_margin="4dp"
+        android:contentDescription="@string/appwidget_silence_text"
+        android:text="@string/appwidget_silence_text"
+        android:textSize="12sp"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:id="@+id/appwidget_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/widgetImageVibrateButton"
+        android:layout_alignTop="@+id/widgetImageVibrateButton"
+        android:layout_margin="4dp"
+        android:contentDescription="@string/appwidget_vibrate_text"
+        android:text="@string/appwidget_vibrate_text"
+        android:textSize="12sp"
+        android:textStyle="bold|italic" />
+        
+    </RelativeLayout>
+
+</RelativeLayout>

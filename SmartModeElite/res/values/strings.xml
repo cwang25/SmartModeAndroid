@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Smart Mode Elite</string>
+    <string name="title_section1">Main</string>
+    <string name="title_section2">Saved Wifi</string>
+    <string name="title_section3">Time Schedule</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_edit_wifi">EditWifiActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="help">Help</string>
+    <string name="frequency_default">5</string>
+    <string name="mode_priority_default">0</string>
+    <string name="title_activity_edit_schedule">EditScheduleActivity</string>
+    <string name="vibrate_manual_on_tag">Vibrate Manual Switch On</string>
+    <string name="silence_manual_on_tag">Silence Manual Switch On</string>
+    <string name="default_set_text">Default Set</string>
+    <string name="resetDefault">Reset</string>
+    <string name="defaultModeTitle">Default mode</string>
+    <string name="add_current_wifi_text">Add current connected wifi</string>
+    <string name="add_scan_wifi_text">Add from scanning</string>
+    <string name="add_saved_wifi_text">Add from saved wifi</string>
+    <string name="add_schedule_text">Add schedule</string>
+    <string name="done_text">Done !</string>
+    <string name="got_it">Got it!</string>
+    <!-- auto reply dialog strings -->
+    <string name="auto_replay_setup_dialog_title">Auto Reply Setting</string>
+    <string name="save">Save</string>
+    <!-- Id for grids -->
+    <!-- The string to store for indicator description -->
+    <string name="normal">The system is running.</string>
+    <string name="stop_by_user">Auto Mode has been turned off by user.</string>
+    <string name="error">Error! Please switch the Auto Mode to OFF and switch it back to ON and see if the problem is solved or not.</string>
+    <string name="restarting">Restarting service &#8230;</string>
+    <!-- Keys for storing (preference) -->
+    <string name="frequency_saved_key">SavedFrequency</string>
+    <string name="sensitive_mode_key">SensitiveModeSwitch</string>
+    <string name="mode_priority_key">ModePriorityKeyPreference</string>
+    <string name="default_setting_key">DefaultSetting</string>
+    <!-- Toggle 1:true 0:false -->
+    <string name="silence_manual_toggle_key">SilenceManualToggle</string>
+    <string name="vibrate_manual_toggle_key">VibrateManualToggle</string>
+    <string name="notification_toggle_key">NotificationToggle</string>
+    <string name="system_status_test_key">SystemStatusTestKey</string>
+    <string name="preference_older_phone_state">OlderPhoneState</string>
+    <string name="current_mode_key">CurrentModeNameKey</string>
+    <!-- Type: -1:none 0:wifi 1:schedult 2:default -->
+    <string name="current_mode_type_key">CurrentModeTypeKey</string>
+    <string name="defaultModeAutoReplyMsg">DefaultModeAutoReplyMessage</string>
+    <string name="defaultModeAutoReplyEnable">DefaultModeAutoReplyEnable</string>
+    <!-- End of Keys section -->
+    <string name="current_mode">None</string>
+    <string name="appwidget_text">Initializing&#8230;</string>
+    <string name="appwidget_silence_text">Silence</string>
+    <string name="appwidget_vibrate_text">Vibrate</string>
+    <string name="add_widget">Add widget</string>
+    <string name="title_activity_edit_default_set">EditDefaultSet</string>
+
+    <!-- Long content body -->
+    <string name="default_set_intro_title">Looks like it is your first time to set up the default mode.</string>
+    <string name="default_set_intro">When Smart Mode can\'t find any matched condition from saved mode, it will apply Default Mode to your phone. \n\nOnce you save the default configuration, you can decide to turn \"Default Mode\" On or Off in \"Setting\" menu.</string>
+    <string name="title_activity_setup_wizard">SetupWizardActivity</string>
+	<!-- Setup Wizard Text -->
+	<string name="next_arrow_text">Next</string>
+	<string name="prev_arrow_text">Prev</string>
+	<!-- step 1 -->
+	<string name="setUpWizardTitle">Setup Wizard</string>
+	<string name="step_1_title">Step 1 - Hello !</string>
+	<string name="step_1_intro">Thank you for choosing Smart Mode :)\nSmart Mode will assist user on adjusting smartphone audio.\n\nSmart Mode will have two type of conditions to determine which mode to apply:\n1.Wifi condition(SSID)\n2.Time schdule condition.\n</string>
+	<string name="step_1_instruction">To start, click \"Next\" arrow button or swipe to the left.\n\nYou can use swipes or arrow buttons to navigate between each step.</string>
+	<string name="nextBtnText">Next</string>
+	<!-- step 2 -->
+	<string name="step_2_title">Step 2 - Set up mode (wifi)</string>
+	<string name="step_2_intro">You can decide your smartphone which mode to be when under a particular wifi network.\n\nYou may want to set your phone to silence under school\'s wifi, so your phone will always turn into silence automatically whenever you are at school(phone conntects to school\'s wifi).</string>
+	<string name="step_2_configure_hint">Click one of the buttons above to configure your wifi mode.</string>
+	<!-- step 3 -->
+	<string name="step_3_title">Step 3 - Set up mode (schedule)</string>
+	<string name="step_3_intro">You can set your phone to be silence between 10pm - 9am, so your phone will not disturb you while you are sleeping. \n\nSchedules are daily repeat basis.</string>
+	<!-- step 4 -->
+	<string name="step_4_title">Step 4 - Set up sensitive mode</string>
+	<string name="step_4_intro">On: Smart Mode will detect wifi and apply the corresponding mode when phone scan the wifi. (Before phone actually connects to the wifi.)\n\nOff: Smart Mode will only detect and apply the mode when phone connect to the wifi.</string>
+	<!-- step 5 -->
+	<string name="step_5_title">Step 5 - Set up checking frequency</string>
+	<string name="step_5_intro">How often you want Smart Mode to check your phone\'s status.  Smart Mode will update phone audio mode more accurately with higher frequency.</string>
+	<!-- step 6 -->
+	<string name="step_6_title">Step 6 - Set up notification</string>
+	<string name="step_6_intro">On: Notification will appear to indicate the current mode of your phone.\n\nOff: No Smart Mode\'s notification will show on your phone.</string>
+	<!-- step 7 -->
+	<string name="step_7_title">Step 7 - Set up detection priority</string>
+	<string name="step_7_intro">This will only matter when schedule time and wifi mode conflict.</string>
+	<string name="step_7_option_intro"></string>
+	<!-- step 8 -->
+	<string name="step_8_title">Done !</string>
+	<string name="step_8_intro">Most configurations can be found in settings and reconfigured.</string>
+	
+	<!-- overlay instruction -->
+	<string name="main_panel_intro">Hello!\n\nDon\'t know where to start?\nClick \"Setup Wizard\" a nerdy dolphin will help you!</string>
+	<string name="tap_instruct">Tap to turn Smart Mode on/off.</string>
+</resources>
