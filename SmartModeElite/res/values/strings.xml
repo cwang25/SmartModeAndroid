@@ -17,20 +17,22 @@
     <string name="default_set_text">Default Set</string>
     <string name="resetDefault">Reset</string>
     <string name="defaultModeTitle">Default mode</string>
-    <string name="add_current_wifi_text">Add current connected wifi</string>
-    <string name="add_scan_wifi_text">Add from scanning</string>
-    <string name="add_saved_wifi_text">Add from saved wifi</string>
+    <string name="add_current_wifi_text">Add currently connected wifi</string>
+    <string name="add_scan_wifi_text">Add from wifi scan</string>
+    <string name="add_saved_wifi_text">Add saved wifi</string>
     <string name="add_schedule_text">Add schedule</string>
     <string name="done_text">Done !</string>
     <string name="got_it">Got it!</string>
+    <string name="have_question">Question?\nTweet me with your question!</string>
+    <string name="tweet_me">Tweet Me! @FattyDolphin</string>
     <!-- auto reply dialog strings -->
     <string name="auto_replay_setup_dialog_title">Auto Reply Setting</string>
     <string name="save">Save</string>
     <!-- Id for grids -->
     <!-- The string to store for indicator description -->
-    <string name="normal">The system is running.</string>
-    <string name="stop_by_user">Auto Mode has been turned off by user.</string>
-    <string name="error">Error! Please switch the Auto Mode to OFF and switch it back to ON and see if the problem is solved or not.</string>
+    <string name="normal">Smart Mode is running.</string>
+    <string name="stop_by_user">Smart Mode is off</string>
+    <string name="error">Error! (X_X)</string>
     <string name="restarting">Restarting service &#8230;</string>
     <!-- Keys for storing (preference) -->
     <string name="frequency_saved_key">SavedFrequency</string>
@@ -66,34 +68,35 @@
 	<!-- step 1 -->
 	<string name="setUpWizardTitle">Setup Wizard</string>
 	<string name="step_1_title">Step 1 - Hello !</string>
-	<string name="step_1_intro">Thank you for choosing Smart Mode :)\nSmart Mode will assist user on adjusting smartphone audio.\n\nSmart Mode will have two type of conditions to determine which mode to apply:\n1.Wifi condition(SSID)\n2.Time schdule condition.\n</string>
+	<string name="step_1_intro">Thank you for choosing Smart Mode :)\nSmart Mode will help you turn your phone into silence, vibrate or custom mode at the right time.\n\nSmart Mode will know when to adjust your phone by which Wifi network your phone connects to or the schedules you make.</string>
 	<string name="step_1_instruction">To start, click \"Next\" arrow button or swipe to the left.\n\nYou can use swipes or arrow buttons to navigate between each step.</string>
 	<string name="nextBtnText">Next</string>
 	<!-- step 2 -->
 	<string name="step_2_title">Step 2 - Set up mode (wifi)</string>
-	<string name="step_2_intro">You can decide your smartphone which mode to be when under a particular wifi network.\n\nYou may want to set your phone to silence under school\'s wifi, so your phone will always turn into silence automatically whenever you are at school(phone conntects to school\'s wifi).</string>
+	<string name="step_2_intro">You are going to tell Smart Mode which mode(silence, vibrate, custom) to apply when your phone connects to the wifi that you set it for.\n\nExample:\nYou could simply ask Smart Mode to silence your phone when you are at office by setting silence mode to the office wifi.  So, your phone will always be silent whenever you walk into office. </string>
 	<string name="step_2_configure_hint">Click one of the buttons above to configure your wifi mode.</string>
 	<!-- step 3 -->
 	<string name="step_3_title">Step 3 - Set up mode (schedule)</string>
-	<string name="step_3_intro">You can set your phone to be silence between 10pm - 9am, so your phone will not disturb you while you are sleeping. \n\nSchedules are daily repeat basis.</string>
+	<string name="step_3_intro">You can also give Smart Mode a schedule for your mode.\n\n Example:\nYou can set your phone to be silent between 10pm - 9am, so your phone will not disturb you while you are sleeping. \n\nSchedules are daily repeat basis.</string>
 	<!-- step 4 -->
 	<string name="step_4_title">Step 4 - Set up sensitive mode</string>
-	<string name="step_4_intro">On: Smart Mode will detect wifi and apply the corresponding mode when phone scan the wifi. (Before phone actually connects to the wifi.)\n\nOff: Smart Mode will only detect and apply the mode when phone connect to the wifi.</string>
+	<string name="step_4_intro">On: Smart Mode will detect and apply the corresponding mode when your phone is around the wifi. (Before your phone actually connects to the wifi.)\n\nOff: Smart Mode will only detect and apply the mode when your phone connects to the wifi.</string>
 	<!-- step 5 -->
 	<string name="step_5_title">Step 5 - Set up checking frequency</string>
-	<string name="step_5_intro">How often you want Smart Mode to check your phone\'s status.  Smart Mode will update phone audio mode more accurately with higher frequency.</string>
+	<string name="step_5_intro">How often you want Smart Mode to check your phone\'s status and apply mode for you.</string>
 	<!-- step 6 -->
 	<string name="step_6_title">Step 6 - Set up notification</string>
-	<string name="step_6_intro">On: Notification will appear to indicate the current mode of your phone.\n\nOff: No Smart Mode\'s notification will show on your phone.</string>
+	<string name="step_6_intro">On: Notification will appear and indicate the current mode of your phone.\n\nOff: No Smart Mode\'s notification will show on your phone.</string>
 	<!-- step 7 -->
 	<string name="step_7_title">Step 7 - Set up detection priority</string>
 	<string name="step_7_intro">This will only matter when schedule time and wifi mode conflict.</string>
 	<string name="step_7_option_intro"></string>
 	<!-- step 8 -->
 	<string name="step_8_title">Done !</string>
-	<string name="step_8_intro">Most configurations can be found in settings and reconfigured.</string>
+	<string name="step_8_intro">Most configurations can be found in settings menu.\n\n\nWait!!!\nSmart Mode also has home screen widget.  You can simply do one-click silence/vibrate and turn Smart Mode on/off on the widget.\nYou can add it to your home screen in Android widget settings page.</string>
 	
 	<!-- overlay instruction -->
 	<string name="main_panel_intro">Hello!\n\nDon\'t know where to start?\nClick \"Setup Wizard\" a nerdy dolphin will help you!</string>
 	<string name="tap_instruct">Tap to turn Smart Mode on/off.</string>
+	<string name="tap_vibratesilence_instruct">Tap for one-click vibrate/silence.</string>
 </resources>

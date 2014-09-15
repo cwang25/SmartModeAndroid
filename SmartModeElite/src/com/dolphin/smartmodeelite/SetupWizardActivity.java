@@ -2,9 +2,11 @@ package com.dolphin.smartmodeelite;
 
 import java.util.Locale;
 
+import com.dolphin.dao.SmartModeDAO;
 import com.dolphin.dialog.ScannedWifiDialogFragment;
 import com.dolphin.service.ModeManagerService;
 import com.dolphin.service.SmartModeGenericService;
+import com.dolphin.widget.SmartModeWidget;
 import com.dolphin.wifiInfo.WifiInfoNoQuote;
 
 import android.app.Activity;
@@ -12,6 +14,9 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v13.app.FragmentPagerAdapter;
@@ -39,6 +44,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.RemoteViews;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -542,6 +548,9 @@ public class SetupWizardActivity extends Activity {
 				intent.putExtras(nBundle);
 				startActivity(intent);
 			}else if(arg0 == this.endSetupWizard){
+				SmartModeDAO db = DAOSingleton.getInstance(this.getActivity()).getDb();
+				db.updateServiceToggle("1");
+				updateWidget("1");
 				SmartModeGenericService.startActionRemoveNotification(this.getActivity());
 				SmartModeGenericService.startCancelScheduleOfService(this.getActivity());
 				ModeManagerService.startRepeatModeService(this.getActivity());
@@ -576,7 +585,20 @@ public class SetupWizardActivity extends Activity {
 			
 		}
 		
-		
+		/**
+		 * Some magic method to update wdget. from stackoverflow.
+		 * @param toggle
+		 */
+		public void updateWidget(String toggle){
+			Context context = this.getActivity();
+			AppWidgetManager am = AppWidgetManager.getInstance(context);
+			RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.smart_mode_widget);
+			ComponentName thisWidget = new ComponentName(context, SmartModeWidget.class);
+			remoteViews.setTextViewText(R.id.appwidget_text, toggle.equals("1")?"ON":"OFF");
+			remoteViews.setImageViewResource(R.id.widgetImageButton,toggle.equals("1")?R.drawable.ic_launcher_3:R.drawable.ic_launcher_black);
+			am.updateAppWidget(thisWidget, remoteViews);
+		}
 	}
+	
 
 }

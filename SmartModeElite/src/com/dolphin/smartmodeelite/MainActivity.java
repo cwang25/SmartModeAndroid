@@ -24,6 +24,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.media.AudioManager;
+import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
@@ -326,6 +327,8 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 		ImageButton imgButSilence;
 		ImageButton imgButVibrate;
 		Button exportDB;
+		Button tweetMe;
+		
 		/**
 		 * Returns a new instance of this fragment for the given section number.
 		 */
@@ -376,6 +379,8 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 				setupWizardBtn.setOnClickListener(this);
 				exportDB = (Button)rootView.findViewById(R.id.ExportDatabtn);
 				exportDB.setOnClickListener(this);
+				tweetMe = (Button)rootView.findViewById(R.id.tweetMe);
+				tweetMe.setOnClickListener(this);
 				gotItBtn = (Button)rootView.findViewById(R.id.mainGotitBtn);
 				gotItBtn.setOnClickListener(this);
 				overlayInstruct = (RelativeLayout)rootView.findViewById(R.id.overlayInstructionMainPanel);
@@ -604,6 +609,10 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 				}
 			} else if(v == this.gotItBtn){
 				overlayInstruct.setVisibility(View.GONE);
+			} else if(v == this.tweetMe){
+				 Uri uriUrl = Uri.parse("https://twitter.com/FattyDolphin");
+			     Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+			     startActivity(launchBrowser);
 			}
 			
 		}
@@ -618,24 +627,10 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 			// TODO Auto-generated method stub
 			if(buttonView == autoModeSwitch){
 				if(isChecked){
-					ServiceStatus t = db.getServiceStatus();
-					Time lTime = new Time();
-					lTime.set(Long.parseLong(t.getLastTime()));
-					Time cur = new Time();
-					cur.setToNow();
-					long past = lTime.toMillis(false);
-					long current = cur.toMillis(false);
-					String prefSchedule = t.getBeenScheduled();
-					int prefScheduleINT = Integer.parseInt(prefSchedule);
-					String toggle = t.getToggle();
-					if(t.getStatus().equals("0") && toggle.equals("0") && (t.getBeenScheduled().equals("0") || (past + prefScheduleINT * DateUtils.MINUTE_IN_MILLIS) < current)){
-						Intent mServiceIntent = new Intent(getActivity(), ModeManagerService.class);
-						getActivity().startService(mServiceIntent);	
-					//	SmartModeGenericService.startActionRepeatUpdateMode(this.getActivity());
-						db.updateServiceToggle("1");
-					}else{
-						db.updateServiceToggle("1");
-					}
+					SmartModeGenericService.startActionRemoveNotification(this.getActivity());
+					SmartModeGenericService.startCancelScheduleOfService(this.getActivity());
+					ModeManagerService.startRepeatModeService(this.getActivity());
+					db.updateServiceToggle("1");
 					updateWidget("1");
 				}else {
 					db.updateServiceToggle("0");
