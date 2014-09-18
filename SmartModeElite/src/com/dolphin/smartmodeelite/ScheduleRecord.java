@@ -65,7 +65,8 @@ public class ScheduleRecord implements Parcelable{
 			if(!isAM){
 				hour = hour + 12;
 			}
-			hour = hour >= 24 ? 0 : hour;
+			hour = hour == 12 ? 0 : hour;
+			hour = hour == 24 ? 12: hour;
 			return hour*HOUR_MASK + minute;
 		}
 		

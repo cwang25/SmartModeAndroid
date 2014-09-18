@@ -219,6 +219,7 @@ public class EditScheduleActivity extends Activity implements EditAutoReplyDialo
 			endTime.setTag(END_TIME_TAG);
 			startTime.setText(recordToEdit.getStartTimeString(DateFormat.is24HourFormat(getActivity())));
 			endTime.setText(recordToEdit.getEndTimeString(DateFormat.is24HourFormat(getActivity())));
+			//Toast.makeText(this.getActivity(),recordToEdit.getEndTime()+"", Toast.LENGTH_SHORT).show();
 			radioGroup = (RadioGroup)rootView.findViewById(R.id.radioGroupMode);
 			radioGroup.setOnCheckedChangeListener(this);
 			ringtonSeekBar = (SeekBar)rootView.findViewById(R.id.ringtoneSeekBar);

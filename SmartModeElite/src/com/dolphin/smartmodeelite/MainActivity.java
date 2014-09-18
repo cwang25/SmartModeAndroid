@@ -319,7 +319,11 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 		TextUpdater lastTimeCompleteTextUpdater;
 		
 		Button gotItBtn;
+		Button gotItBtnWifiList;
+		Button gotItBtnScheduList;
 		RelativeLayout overlayInstruct;
+		RelativeLayout overlayWifiList;
+		RelativeLayout overlayScheduleList;
 		/**
 		 * Text field to indicate current mode.
 		 */
@@ -328,6 +332,9 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 		ImageButton imgButVibrate;
 		Button exportDB;
 		Button tweetMe;
+		ImageView overlayCover;
+		ImageView overlayCoverWifiList;
+		ImageView overlayCoverScheduleList;
 		
 		/**
 		 * Returns a new instance of this fragment for the given section number.
@@ -381,9 +388,15 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 				exportDB.setOnClickListener(this);
 				tweetMe = (Button)rootView.findViewById(R.id.tweetMe);
 				tweetMe.setOnClickListener(this);
-				gotItBtn = (Button)rootView.findViewById(R.id.mainGotitBtn);
-				gotItBtn.setOnClickListener(this);
 				overlayInstruct = (RelativeLayout)rootView.findViewById(R.id.overlayInstructionMainPanel);
+				if(!getPreferenceBool(this.getActivity().getString(R.string.main_first_time_view_key), this.getActivity())){
+					gotItBtn = (Button)rootView.findViewById(R.id.mainGotitBtn);
+					gotItBtn.setOnClickListener(this);
+					overlayCover = (ImageView)rootView.findViewById(R.id.overlay_cover_image);
+					overlayCover.setOnClickListener(this);	
+				}else {
+					overlayInstruct.setVisibility(View.GONE);
+				}
 				//TextView setupWizard = (TextView)rootView.findViewById(R.id.setupWizardBtext);
 				//setupWizard.setText(Integer.toString(db.getFromSSIDBySSID("\"hansamycindy\"").size()));
 				ServiceStatus tmpService = db.getServiceStatus();
@@ -433,6 +446,15 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 						startActivity(intent);
 					}
 				});
+				overlayWifiList = (RelativeLayout)rootView.findViewById(R.id.overlayWifiListInstruction);
+				if(!getPreferenceBool(this.getActivity().getString(R.string.list_first_time_view_key), this.getActivity())){
+					this.gotItBtnWifiList = (Button)rootView.findViewById(R.id.wifiGotitBtn);
+					gotItBtnWifiList.setOnClickListener(this);
+					overlayCoverWifiList = (ImageView)rootView.findViewById(R.id.overlayWifiListInstrucCover);
+					overlayCoverWifiList.setOnClickListener(this);	
+				}else{
+					overlayWifiList.setVisibility(View.GONE);
+				}
 			}
 				break;
 			case 3:
@@ -458,6 +480,15 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 						startActivity(intent);
 					}
 				});
+				overlayScheduleList = (RelativeLayout)rootView.findViewById(R.id.overlayScheduleListInstruction);
+				if(!getPreferenceBool(this.getActivity().getString(R.string.list_first_time_view_key), this.getActivity())){
+					this.gotItBtnScheduList = (Button)rootView.findViewById(R.id.scheduleGotitBtn);
+					gotItBtnScheduList.setOnClickListener(this);
+					overlayCoverScheduleList = (ImageView)rootView.findViewById(R.id.overlayScheduleListInstrucCover);
+					overlayCoverScheduleList.setOnClickListener(this);	
+				}else{
+					overlayScheduleList.setVisibility(View.GONE);
+				}
 			}
 				break;
 			default:
@@ -607,12 +638,18 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 				} catch(android.content.ActivityNotFoundException e){
 					this.printMessage(this.getActivity(), "ERROR");
 				}
-			} else if(v == this.gotItBtn){
+			} else if(v == this.gotItBtn || v == this.overlayCover){
 				overlayInstruct.setVisibility(View.GONE);
-			} else if(v == this.tweetMe){
+				setPreferenceBool(true, this.getActivity().getString(R.string.main_first_time_view_key), this.getActivity());
+			} else if(v == this.tweetMe ){
 				 Uri uriUrl = Uri.parse("https://twitter.com/FattyDolphin");
 			     Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
 			     startActivity(launchBrowser);
+			} else if(v == this.gotItBtnWifiList || v== this.gotItBtnScheduList || v == this.overlayCoverWifiList || v == this.overlayCoverScheduleList){
+				if(overlayWifiList != null)this.overlayWifiList.setVisibility(View.GONE);
+				if(overlayScheduleList != null)this.overlayScheduleList.setVisibility(View.GONE);
+
+				setPreferenceBool(true, this.getActivity().getString(R.string.list_first_time_view_key), this.getActivity());
 			}
 			
 		}
@@ -826,7 +863,6 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 			}			
 		}
 
-		
 
 	}
 	
@@ -856,7 +892,30 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 		return rst;
 	}
 	
-	
+
+	/**
+	 * The method to get boolean value for shareprerference for first time useage record.
+	 * @param key
+	 * @param context
+	 * @return
+	 */
+	private static boolean getPreferenceBool(String key, Context context){
+		SharedPreferences sharePrefere = PreferenceManager.getDefaultSharedPreferences(context);
+		boolean savedIfo = sharePrefere.getBoolean(key, false);
+		return savedIfo;
+	}
+	/**
+	 * Method to set boolean value
+	 * @param val
+	 * @param key
+	 * @param context
+	 * @return
+	 */
+	private static boolean setPreferenceBool (boolean val, String key, Context context){
+		SharedPreferences sharePrefere = PreferenceManager.getDefaultSharedPreferences(context);
+		boolean rst = sharePrefere.edit().putBoolean(key, val).commit();
+		return rst;
+	}
 	//Export database function.
 	private class ExportDatabase extends AsyncTask<Void, Void, Void>{
 

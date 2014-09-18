@@ -39,6 +39,9 @@
     <string name="sensitive_mode_key">SensitiveModeSwitch</string>
     <string name="mode_priority_key">ModePriorityKeyPreference</string>
     <string name="default_setting_key">DefaultSetting</string>
+    <string name="main_first_time_view_key">MainFirstTimeViewKey</string>
+    <string name="list_first_time_view_key">WifiFirstTimeViewKey</string>
+    <string name="edit_first_time_view_key">EditFirstTimeViewKey</string>
     <!-- Toggle 1:true 0:false -->
     <string name="silence_manual_toggle_key">SilenceManualToggle</string>
     <string name="vibrate_manual_toggle_key">VibrateManualToggle</string>
@@ -99,4 +102,7 @@
 	<string name="main_panel_intro">Hello!\n\nDon\'t know where to start?\nClick \"Setup Wizard\" a nerdy dolphin will help you!</string>
 	<string name="tap_instruct">Tap to turn Smart Mode on/off.</string>
 	<string name="tap_vibratesilence_instruct">Tap for one-click vibrate/silence.</string>
+	<string name="tap_to_add_schedule_mode">Tap to add your mode with the schedule.</string>
+	<string name="tap_to_add_wifi_mode">Tap to attach your wifi connection with the mode you want.</string>
+	<string name="tap_item_to_edit">Tap the item of the list to edit.</string>
 </resources>

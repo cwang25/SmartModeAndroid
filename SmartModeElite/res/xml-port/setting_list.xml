@@ -5,6 +5,8 @@
     <SwitchPreference android:summaryOn="Show Notification" android:switchTextOff="Hide" android:summaryOff="Hide Notification" android:switchTextOn="Show" android:key="@string/notification_toggle_key" android:defaultValue="true" android:title="Notification"/>
     <com.dolphin.listpreference.EnhancedListPreference android:entries="@array/modePiorty" android:entryValues="@array/modePriortySystem" android:dialogTitle="Set detection priority." android:dialogMessage="Select priority." android:positiveButtonText="Set" android:negativeButtonText="Cancel" android:dialogLayout="@layout/settings_list" android:key="@string/mode_priority_key" android:title="Mode Detection Priority" android:summary="%s" android:persistent="true" android:defaultValue="@string/mode_priority_default"/>
     <SwitchPreference android:key="@string/default_setting_key" android:switchTextOff="OFF" android:summaryOn="Smart Mode will apply default mode when the it cannot find any saved mode to apply." android:switchTextOn="ON" android:summaryOff="Smart Mode will leave any volume set that is left on the phone when it cannot find any saved mode to apply." android:defaultValue="false" android:title="Default Mode"/>
+    <CheckBoxPreference android:summaryOff="Hide main overlay instruction" android:defaultValue="false" android:summaryOn="Hide main overlay instruction" android:key="@string/main_first_time_view_key" /><CheckBoxPreference android:summaryOff="Hide wifi/schedule instruction" android:summaryOn="Hide wifi/schedule instruction" android:key="@string/list_first_time_view_key" android:defaultValue="false"/>
+    
     
 
 </PreferenceScreen>

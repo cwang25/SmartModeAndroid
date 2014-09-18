@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="2dp"
     android:background="#DEFFDB" >
 
     <Button
@@ -13,6 +12,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:text="@string/add_scan_wifi_text" />
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
@@ -39,5 +39,93 @@
         android:layout_above="@+id/addWifiByScan"
         android:layout_alignParentLeft="true"
         android:text="@string/add_current_wifi_text" />
+
+    <RelativeLayout
+        android:id="@+id/overlayWifiListInstruction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" >
+
+        <ImageView
+            android:id="@+id/overlayWifiListInstrucCover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true" />
+
+        <Button
+            android:id="@+id/addCurConnectedWifiAnchor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/addWifiByScanAnchor2"
+            android:layout_alignParentLeft="true"
+            android:text="@string/add_current_wifi_text"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/addCurConnectedWifiAnchor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/addCurConnectedWifiAnchor"
+            android:layout_alignParentLeft="true"
+            android:text="@string/add_current_wifi_text"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/addWifiByScanAnchor2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:text="@string/add_scan_wifi_text"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/addCurConnectedWifiAnchor"
+            android:layout_alignTop="@+id/addCurConnectedWifiAnchor"
+            android:alpha="0.8"
+            android:src="@drawable/tap_icon" />
+
+        <TextView
+            android:id="@+id/tapToAddInstruc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/addCurConnectedWifiAnchor"
+            android:layout_alignParentLeft="true"
+            android:text="@string/tap_to_add_wifi_mode"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?android:textColorPrimaryInverse" />
+
+        <ImageView
+            android:id="@+id/tapListInstruc"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/tap_list" />
+
+        <TextView
+            android:id="@+id/tapToEditInstruc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tapListInstruc"
+            android:text="@string/tap_item_to_edit"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?android:textColorPrimaryInverse" />
+
+        <Button
+            android:id="@+id/wifiGotitBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/got_it"
+            android:textColor="?android:textColorPrimaryInverse" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

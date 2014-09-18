@@ -18,10 +18,80 @@
     <ListView
         android:id="@+id/listViewSchedule"
         android:layout_width="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/newScheduleAdd" >
-
+        android:layout_above="@+id/newScheduleAdd"
+        android:layout_alignParentTop="true" >
     </ListView>
+
+    <RelativeLayout
+        android:id="@+id/overlayScheduleListInstruction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" >
+
+        <ImageView
+            android:id="@+id/overlayScheduleListInstrucCover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true" />
+
+        <Button
+            android:id="@+id/anchorButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="@string/add_schedule_text"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/anchorButton"
+            android:layout_alignLeft="@+id/anchorButton"
+            android:layout_alignTop="@+id/anchorButton"
+            android:layout_alignRight="@+id/anchorButton"
+            android:alpha="0.8"
+            android:src="@drawable/tap_icon" />
+
+        <TextView
+            android:id="@+id/tapToAddInstruc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/anchorButton"
+            android:layout_alignParentLeft="true"
+            android:text="@string/tap_to_add_schedule_mode"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?android:textColorPrimaryInverse" />
+
+        <ImageView
+            android:id="@+id/tapListInstruc"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/tap_list" />
+
+        <TextView
+            android:id="@+id/tapToEditInstruc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tapListInstruc"
+            android:text="@string/tap_item_to_edit"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?android:textColorPrimaryInverse" />
+
+        <Button
+            android:id="@+id/scheduleGotitBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/got_it"
+            android:textColor="?android:textColorPrimaryInverse" />
+    </RelativeLayout>
 
 </RelativeLayout>
