@@ -37,10 +37,10 @@ public class ScannedWifiDialogFragment extends DialogFragment implements DialogI
 	}
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		if(listType == SCAN_WIFI){
+		WifiManager wifiManager = (WifiManager) this.getActivity()
+				.getSystemService(MainActivity.WIFI_SERVICE);
+		if(wifiManager.getScanResults()!=null &&listType == SCAN_WIFI){
 			//scanning
-			WifiManager wifiManager = (WifiManager) this.getActivity()
-					.getSystemService(MainActivity.WIFI_SERVICE);
 			List<ScanResult> scannedResult = wifiManager.getScanResults();
 			ListIterator<ScanResult> cursor = scannedResult.listIterator();
 			List<String> ssidScanned = new ArrayList<String>();
@@ -49,10 +49,8 @@ public class ScannedWifiDialogFragment extends DialogFragment implements DialogI
 			}
 			arraySSIDscanned = ssidScanned.toArray(new String[ssidScanned
 					.size()]);
-		}else if(listType == SAVED_WIFI){
+		}else if(wifiManager.getConfiguredNetworks() != null && listType == SAVED_WIFI){
 			//saved
-			WifiManager wifiManager = (WifiManager) this.getActivity()
-					.getSystemService(MainActivity.WIFI_SERVICE);
 			List<WifiConfiguration> scannedResult = wifiManager.getConfiguredNetworks();
 			ListIterator<WifiConfiguration> cursor = scannedResult.listIterator();
 			List<String> ssidScanned = new ArrayList<String>();
@@ -63,7 +61,7 @@ public class ScannedWifiDialogFragment extends DialogFragment implements DialogI
 			arraySSIDscanned = ssidScanned.toArray(new String[ssidScanned
 					.size()]);
 		}else{
-			throw new IllegalArgumentException("Wrong list type argument.");
+			Toast.makeText(getActivity(),"Turn on Wifi", Toast.LENGTH_SHORT).show();
 		}
 		// Use the Builder class for convenient dialog construction
 		

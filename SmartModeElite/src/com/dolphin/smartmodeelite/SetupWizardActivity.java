@@ -430,7 +430,7 @@ public class SetupWizardActivity extends Activity {
 				preText = new TextView(this.getActivity());
 				preText.setId(preTextID);
 				preText.setTextAppearance(this.getActivity(), android.R.style.TextAppearance_Medium);
-				preText.setText("Smart mode will check every:");
+				preText.setText(this.getActivity().getString(R.string.step_5_setting));
 				RelativeLayout.LayoutParams preTextParam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 				preTextParam.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
 				preTextParam.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
@@ -452,7 +452,7 @@ public class SetupWizardActivity extends Activity {
 				postText = new TextView(this.getActivity());
 				postText.setTextAppearance(this.getActivity(), android.R.style.TextAppearance_Medium);
 				postText.setId(postTextID);
-				postText.setText(" minutes.");
+				postText.setText(this.getActivity().getString(R.string.step_5_posttext));
 				RelativeLayout.LayoutParams postTextParam  = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 				postTextParam.addRule(RelativeLayout.RIGHT_OF, frequencyList.getId());
 				postTextParam.addRule(RelativeLayout.ALIGN_BASELINE, frequencyList.getId());

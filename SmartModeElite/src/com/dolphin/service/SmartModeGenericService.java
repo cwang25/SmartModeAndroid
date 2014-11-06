@@ -232,26 +232,26 @@ public class SmartModeGenericService extends IntentService{
 		if (toggleOn) {
 			if (notificationShow) {
 				if (manualSet == null) {
-					pushNotification(rst != null ? "Current Mode: " + rst
-							: "None", senseMode ? "Sensitive Mode On"
-							: "Sensitive Mode Off",
+					pushNotification(rst != null ? this.getApplicationContext().getString(R.string.cur_mode)+ rst
+							: this.getApplicationContext().getString(R.string.none_notification), senseMode ? this.getApplicationContext().getString(R.string.sensitive_mode_on)
+							: this.getApplicationContext().getString(R.string.sensitive_mode_off),
 							rst != null ? R.drawable.ic_stat_green_logo
 									: R.drawable.ic_launcher_3,
 							MainActivity.class);
 				} else {
 					pushNotification(
 							rst,
-							senseMode ? "Sensitive Mode On"
-									: "Sensitive Mode Off",
+							senseMode ? this.getApplicationContext().getString(R.string.sensitive_mode_on)
+									: this.getApplicationContext().getString(R.string.sensitive_mode_off),
 							rst.equals(getString(R.string.vibrate_manual_on_tag)) ? R.drawable.ic_vibrate_logo
 									: R.drawable.ic_silience_logo,
 							MainActivity.class);
 				}
 			}
 			// If saw error then stop rerun.
-			db.updateCurrentMode(rst != null ? rst : "None");
+			db.updateCurrentMode(rst != null ? rst : this.getApplicationContext().getString(R.string.none_notification));
 		} else {
-			db.updateCurrentMode("None");
+			db.updateCurrentMode(this.getApplicationContext().getString(R.string.none_notification));
 		}
 //		android.os.Debug.waitForDebugger();
 		return errind;

@@ -28,7 +28,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/currentModeTag"
                     android:layout_below="@+id/currentModeTag"
-                    android:text="Mode"
+                    android:text="@string/none_notification"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
@@ -38,7 +38,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:layout_margin="5dp"
-                    android:text="Current Mode: "
+                    android:text="@string/cur_mode"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
             </RelativeLayout>
 
@@ -119,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_above="@+id/autoModeSwitch"
                     android:layout_centerHorizontal="true"
-                    android:text="Auto Mode"
+                    android:text="@string/auto_mode"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
             </RelativeLayout>
 
@@ -223,7 +223,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:text="Setup Wizard" />
+                    android:text="@string/setUpWizardTitle" />
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>

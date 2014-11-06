@@ -1,12 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-    <SwitchPreference android:switchTextOn="ON" android:switchTextOff="OFF" android:summaryOn="System will detect wifi and adjust mode when phone scans the wifi." android:summaryOff="System will only detect and adjust mode when phone is connected with wifi." android:title="Sensetive Mode" android:key="@string/sensitive_mode_key" android:defaultValue="false"/>
-    <com.dolphin.listpreference.EnhancedListPreference android:entries="@array/frequencySettingHuman" android:entryValues="@array/frequencySettingSystem" android:negativeButtonText="Cancel" android:positiveButtonText="Set" android:title="Smart Mode will check every: " android:summary="%s" android:key="@string/frequency_saved_key" android:dialogMessage="Select time." android:dialogTitle="Set Frequency" android:defaultValue="@string/frequency_default" android:dialogLayout="@layout/settings_list" android:persistent="true"/>
-    <SwitchPreference android:summaryOn="Show Notification" android:switchTextOff="Hide" android:summaryOff="Hide Notification" android:switchTextOn="Show" android:key="@string/notification_toggle_key" android:defaultValue="true" android:title="Notification"/>
-    <com.dolphin.listpreference.EnhancedListPreference android:entries="@array/modePiorty" android:entryValues="@array/modePriortySystem" android:dialogTitle="Set detection priority." android:dialogMessage="Select priority." android:positiveButtonText="Set" android:negativeButtonText="Cancel" android:dialogLayout="@layout/settings_list" android:key="@string/mode_priority_key" android:title="Mode Detection Priority" android:summary="%s" android:persistent="true" android:defaultValue="@string/mode_priority_default"/>
-    <SwitchPreference android:key="@string/default_setting_key" android:switchTextOff="OFF" android:summaryOn="Smart Mode will apply default mode when the it cannot find any saved mode to apply." android:switchTextOn="ON" android:summaryOff="Smart Mode will leave any volume set that is left on the phone when it cannot find any saved mode to apply." android:defaultValue="false" android:title="Default Mode"/>
-    <CheckBoxPreference android:summaryOff="Hide main overlay instruction" android:defaultValue="false" android:summaryOn="Hide main overlay instruction" android:key="@string/main_first_time_view_key" /><CheckBoxPreference android:summaryOff="Hide wifi/schedule instruction" android:summaryOn="Hide wifi/schedule instruction" android:key="@string/list_first_time_view_key" android:defaultValue="false"/>
-    
-    
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="@string/sensitive_mode_key"
+        android:summaryOff="@string/sensitive_toggle_off"
+        android:summaryOn="@string/sensitive_toggle_on"
+        android:title="@string/sensitive_mode" />
+
+    <com.dolphin.listpreference.EnhancedListPreference
+        android:defaultValue="@string/frequency_default"
+        android:dialogLayout="@layout/settings_list"
+        android:dialogMessage="@string/select_time"
+        android:dialogTitle="@string/set_frequency"
+        android:entries="@array/frequencySettingHuman"
+        android:entryValues="@array/frequencySettingSystem"
+        android:key="@string/frequency_saved_key"
+        android:negativeButtonText="@string/negative_btn"
+        android:persistent="true"
+        android:positiveButtonText="@string/positive_btn"
+        android:summary="%s"
+        android:title="@string/check_every" />
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/notification_toggle_key"
+        android:summaryOff="@string/hide_noti"
+        android:summaryOn="@string/show_noti"
+        android:switchTextOff="@string/hide"
+        android:switchTextOn="@string/show"
+        android:title="@string/notification" />
+
+    <com.dolphin.listpreference.EnhancedListPreference
+        android:defaultValue="@string/mode_priority_default"
+        android:dialogLayout="@layout/settings_list"
+        android:dialogMessage="@string/select_priority"
+        android:dialogTitle="@string/set_detection_prior"
+        android:entries="@array/modePiorty"
+        android:entryValues="@array/modePriortySystem"
+        android:key="@string/mode_priority_key"
+        android:negativeButtonText="@string/negative_btn"
+        android:persistent="true"
+        android:positiveButtonText="@string/positive_btn"
+        android:summary="%s"
+        android:title="@string/mode_detect_priority" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="@string/default_setting_key"
+        android:summaryOff="@string/default_set_off_summary"
+        android:summaryOn="@string/default_set_on_summary"
+        android:title="@string/default_set" />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="@string/main_first_time_view_key"
+        android:summaryOff="Hide main overlay instruction"
+        android:summaryOn="Hide main overlay instruction" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="@string/list_first_time_view_key"
+        android:summaryOff="Hide wifi/schedule instruction"
+        android:summaryOn="Hide wifi/schedule instruction" />
 
 </PreferenceScreen>

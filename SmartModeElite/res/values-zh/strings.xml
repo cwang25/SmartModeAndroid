@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Smart Mode Elite</string>
+    <string name="title_section1">主畫面</string>
+    <string name="title_section2">Wifi無線網路</string>
+    <string name="title_section3">排程</string>
+    <string name="action_settings">設置</string>
+    <string name="title_activity_edit_wifi">Wifi音效模式設定</string>
+    <string name="hello_world">哈搂世界!</string>
+    <string name="help">幫助</string>
+    <string name="frequency_default">5</string>
+    <string name="mode_priority_default">0</string>
+    <string name="title_activity_edit_schedule">音效模式排程設定</string>
+    <string name="vibrate_manual_on_tag">手動音效模式-震動</string>
+    <string name="silence_manual_on_tag">手動音效模式-靜音</string>
+    <string name="default_set_text">預設音效模式</string>
+    <string name="resetDefault">重設</string>
+    <string name="defaultModeTitle">預設音效模式</string>
+    <string name="add_current_wifi_text">綁定音效模式到已連接的Wifi</string>
+    <string name="add_scan_wifi_text">綁定音效模式到周圍Wifi</string>
+    <string name="add_saved_wifi_text">綁定音效模式到已存Wifi</string>
+    <string name="add_schedule_text">增加排程</string>
+    <string name="done_text">完成 !</string>
+    <string name="got_it">知道了!</string>
+    <string name="have_question">還有問題?\n推特我吧!</string>
+    <string name="tweet_me">密我~! @FattyDolphin</string>
+    <string name="cur_mode">現在音效模式: </string>
+    <string name="auto_mode">Smart Mode 開關</string>
+    <string name="sensitive_mode_on">敏感模式</string>
+    <string name="sensitive_mode_off">非敏感模式</string>
+    <string name="none_notification">無</string>
+    
+    <!-- auto reply dialog strings -->
+    <string name="auto_replay_setup_dialog_title">自動簡訊回覆設定</string>
+    <string name="save">存檔</string>
+    <!-- Id for grids -->
+    <!-- The string to store for indicator description -->
+    <string name="normal">Smart Mode 運行中&#8230;</string>
+    <string name="stop_by_user">Smart Mode 已關閉</string>
+    <string name="error">當了! (X_X)</string>
+    <string name="restarting">重啟中 &#8230;</string>
+    <!-- Keys for storing (preference) -->
+    <string name="frequency_saved_key">SavedFrequency</string>
+    <string name="sensitive_mode_key">SensitiveModeSwitch</string>
+    <string name="mode_priority_key">ModePriorityKeyPreference</string>
+    <string name="default_setting_key">DefaultSetting</string>
+    <string name="main_first_time_view_key">MainFirstTimeViewKey</string>
+    <string name="list_first_time_view_key">WifiFirstTimeViewKey</string>
+    <string name="edit_first_time_view_key">EditFirstTimeViewKey</string>
+    <!-- Toggle 1:true 0:false -->
+    <string name="silence_manual_toggle_key">SilenceManualToggle</string>
+    <string name="vibrate_manual_toggle_key">VibrateManualToggle</string>
+    <string name="notification_toggle_key">NotificationToggle</string>
+    <string name="system_status_test_key">SystemStatusTestKey</string>
+    <string name="preference_older_phone_state">OlderPhoneState</string>
+    <string name="current_mode_key">CurrentModeNameKey</string>
+    <!-- Type: -1:none 0:wifi 1:schedult 2:default -->
+    <string name="current_mode_type_key">CurrentModeTypeKey</string>
+    <string name="defaultModeAutoReplyMsg">DefaultModeAutoReplyMessage</string>
+    <string name="defaultModeAutoReplyEnable">DefaultModeAutoReplyEnable</string>
+    <!-- End of Keys section -->
+    <string name="current_mode">無</string>
+    <string name="appwidget_text">初始化中&#8230;</string>
+    <string name="appwidget_silence_text">靜音</string>
+    <string name="appwidget_vibrate_text">震動</string>
+    <string name="add_widget">增加小助手</string>
+    <string name="title_activity_edit_default_set">編輯預設設定</string>
+
+    <!-- Long content body -->
+    <string name="default_set_intro_title">預設音效模式介紹</string>
+    <string name="default_set_intro">當Smart Mode 找不到匹配的音效模式的時候, 它會把預設音效模式套用在你的手機上。 \n\n設定完後, 你可以到設定選項裡面的預設音效模式選項，將之開啟或關閉。</string>
+    <string name="title_activity_setup_wizard">設置精靈</string>
+	<!-- Setup Wizard Text -->
+	<string name="next_arrow_text">下一步</string>
+	<string name="prev_arrow_text">上一步</string>
+	<!-- step 1 -->
+	<string name="setUpWizardTitle">設置精靈</string>
+	<string name="step_1_title">第一步 - 安安 !</string>
+	<string name="step_1_intro">感謝下載 Smart Mode :)\nSmart Mode 會在正確的時間時刻將你手機改成靜音或是震動。\n\nSmart Mode 會依照你手機連接的wifi網路以及排程去決定哪個音效模式套用在你手機上。</string>
+	<string name="step_1_instruction">想要設置的話, 按 \"下一步\" 按鈕.\n\n你可以用左右箭頭按鈕來切換步驟。    其實用滑就好了xD</string>
+	<string name="nextBtnText">下一步</string>
+	<!-- step 2 -->
+	<string name="step_2_title">第二步 - 綁定音效模式到Wifi</string>
+	<string name="step_2_intro">給Smart Mode指示說, 當它偵測到你手機在連結特定的Wifi的時候, 把你的手機調成靜音, 震動 或是其他。\n\n比方說:\n你可設定幫手機連到學校教室的Wifi的時候, 靜音。 這樣一來，無論甚麼時候你都不用擔心手機沒關靜音被老師罵啦!~</string>
+	<string name="step_2_configure_hint">按上面一個你想要的按鍵去設定你的WIFI相對應的音效模式</string>
+	<!-- step 3 -->
+	<string name="step_3_title">第三步 - 設置排程</string>
+	<string name="step_3_intro">讓Smart Mode 知道何時套用何種的音效模式。\n\n 例子:\n你可以設定手機從晚上十點到早上九點靜音，這樣的話你就不用擔心有白目晚上叩你起床上廁所了。 \n\n排程是每天重複的排程 (以後我會加入  設定星期幾根星期幾的 QAQ 請見諒).</string>
+	<!-- step 4 -->
+	<string name="step_4_title">第四部 - 敏感模式設定</string>
+	<string name="step_4_intro">開啟: Smart Mode 在你手機掃到該wifi的時候就會套用你相對應的音效模式。 \n\n關: 只有在接上該wifi才會起作用。</string>
+	<!-- step 5 -->
+	<string name="step_5_title">第五步- 設定偵測頻率</string>
+	<string name="step_5_intro">設定你想要Smart Mode 偵測你手機狀態的頻率</string>
+	<string name="step_5_setting">Smart Mode 每幾分鐘偵測一次:</string>
+		<string name="step_5_posttext"> 分鐘.</string>
+	
+	<!-- step 6 -->
+	<string name="step_6_title">第六步- 設定通知</string>
+	<string name="step_6_intro">開啟: 通知會出現在你手機銀幕上方並且跟你說你手機當下的音效模式。\n\n關: 啥都沒有。</string>
+	<!-- step 7 -->
+	<string name="step_7_title">第七步- 模式套用優先順序</string>
+	<string name="step_7_intro">只有在Wifi音效模式跟排程音效模式衝突時才會用到。</string>
+	<string name="step_7_option_intro"></string>
+	<!-- step 8 -->
+	<string name="step_8_title">完成 !</string>
+	<string name="step_8_intro">在設定選項中，以上的東西都可以重新設定。\n\n對了!\nSmart Mode 有桌面助手!  助手可以讓你在桌面上有一鍵轉靜音跟一鍵轉震動模式 ，還有開關Smart Modem。</string>
+	
+	<!-- overlay instruction -->
+	<string name="main_panel_intro">嗨!\n\n眼花不知道從何做起?\n按 \"設置精靈\" 就好了!</string>
+	<string name="tap_instruct">Smart Mode 開關.</string>
+	<string name="tap_vibratesilence_instruct">一鍵震動/靜音</string>
+	<string name="tap_to_add_schedule_mode">按這個增加新的音效模式排程</string>
+	<string name="tap_to_add_wifi_mode">按這個綁定音效模式到特定的你想要的wifi</string>
+	<string name="tap_item_to_edit">按表單上的項目來更改設定</string>
+	
+		<!-- settings menu strings -->
+	<string name="sensitive_mode">敏感模式</string>
+	<string name="sensitive_toggle_on">系統在掃到wifi的同時就會套用相對應的音效模式</string>
+	<string name="sensitive_toggle_off">只有在實際連接上wifi才會套用</string>
+	<string name="show_noti">顯示通知</string>
+	<string name="hide_noti">隱藏通知</string>
+	<string name="show">顯示</string>
+	<string name="hide">隱藏</string>
+	<string name="notification">通知</string>
+	<string name="default_set_on_summary">Smart Mode 會套用預設音效模式，當它找不到可匹配的音效模式</string>
+	<string name="default_set_off_summary">Smart Mode 不做任何事當找不到可匹配的音效模式</string>
+	<string name="default_set">預設模式</string>
+	<string name="hide_main_intro">隱藏主畫面介紹</string>
+	<string name="hide_list_intro">隱藏wifi無線網路/排程頁面介紹</string>
+	<string name="select_time">選取時間</string>
+	<string name="set_frequency">設定頻率</string>
+	<string name="negative_btn">取消</string>
+	<string name="positive_btn">確認</string>
+	<string name="check_every">Smart Mode 每個幾分鐘偵測一次: </string>
+	<string name="select_priority">選擇優先順序</string>
+	<string name="set_detection_prior">設置偵測優先順序</string>
+	<string name="mode_detect_priority">音效模式套用優先順序</string>
+
+</resources>
