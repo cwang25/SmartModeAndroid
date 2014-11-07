@@ -155,7 +155,7 @@ public class EditWifiActivity extends Activity implements EditAutoReplyDialogFra
 					// TODO Auto-generated method stub
 					if(activity.autoReplyMsg.length() < 1){
 						arg0.setChecked(false);
-						activity.printMessage(activity, "Can't enable with empty message.  Please set up message before enabling auto reply.");
+						activity.printMessage(activity, activity.getString(R.string.err_reply_msg));
 					} else {
 						activity.setEnable(arg1);
 					}
@@ -258,14 +258,14 @@ public class EditWifiActivity extends Activity implements EditAutoReplyDialogFra
 							WifiRecord wrToSave = new WifiRecord(ssidToSave,modeParsed);
 							long insertResult = tmpDB.insertToSSID(wrToSave);
 							if(insertResult == -1){
-								Toast.makeText(this.getActivity().getBaseContext(), "Can't save the data. Something wrong. Please try it again later.", Toast.LENGTH_SHORT).show();
+								Toast.makeText(this.getActivity().getBaseContext(), this.getActivity().getString(R.string.cant_plz_try_again), Toast.LENGTH_SHORT).show();
 							} else {
-								Toast.makeText(this.getActivity().getBaseContext(), "Data created successfully!", Toast.LENGTH_SHORT).show();
+								Toast.makeText(this.getActivity().getBaseContext(), this.getActivity().getString(R.string.data_create_succesfully), Toast.LENGTH_SHORT).show();
 								tmpDB.insertOrUpdateAutoReply(insertResult, WIFI_MODE, ((EditWifiActivity)this.getActivity()).autoReplyMsg, ((EditWifiActivity)this.getActivity()).isEnable?1:0);
 								this.getActivity().finish();
 							}
 						} else {
-							Toast.makeText(this.getActivity().getBaseContext(), "The ssid has already existed. Please edit the existing one instead.", Toast.LENGTH_SHORT).show();
+							Toast.makeText(this.getActivity().getBaseContext(), this.getActivity().getString(R.string.wifi_alreadyt_exist), Toast.LENGTH_SHORT).show();
 						}
 					} else {
 						//Edit existing record section.
@@ -299,19 +299,19 @@ public class EditWifiActivity extends Activity implements EditAutoReplyDialogFra
 								insertResult = tmpDB.updateRecordSSID(wrToSave);
 							}
 							if(insertResult == -1){
-								Toast.makeText(this.getActivity().getBaseContext(), "Can't save the data. Something wrong. Please try it again later.", Toast.LENGTH_SHORT).show();
+								Toast.makeText(this.getActivity().getBaseContext(), this.getActivity().getString(R.string.cant_plz_try_again), Toast.LENGTH_SHORT).show();
 							} else {
-								Toast.makeText(this.getActivity().getBaseContext(), "Data saved successfully!", Toast.LENGTH_SHORT).show();
+								Toast.makeText(this.getActivity().getBaseContext(), this.getActivity().getString(R.string.data_create_succesfully), Toast.LENGTH_SHORT).show();
 								long recordID = tmpDB.getRowIDFromSSID(ssidToSave);
 								tmpDB.insertOrUpdateAutoReply(recordID, WIFI_MODE, ((EditWifiActivity)this.getActivity()).autoReplyMsg, ((EditWifiActivity)this.getActivity()).isEnable?1:0);
 								this.getActivity().finish();
 							}
 						} else {
-							Toast.makeText(this.getActivity().getBaseContext(), "Something wrong!", Toast.LENGTH_SHORT).show();
+							Toast.makeText(this.getActivity().getBaseContext(),this.getActivity().getString(R.string.cant_plz_try_again), Toast.LENGTH_SHORT).show();
 						}
 					}
 				}else{
-					Toast.makeText(this.getActivity().getBaseContext(), "SSID can't be left with empty!", Toast.LENGTH_SHORT).show();
+					Toast.makeText(this.getActivity().getBaseContext(), this.getActivity().getString(R.string.weifi_cant_be_empty), Toast.LENGTH_SHORT).show();
 				}
 				
 			} else if(v == this.editAutoReply){

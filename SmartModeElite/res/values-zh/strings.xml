@@ -31,6 +31,33 @@
     <string name="sensitive_mode_off">非敏感模式</string>
     <string name="none_notification">無</string>
     
+        <string name="ssid">Wifi: </string>
+    <string name="schedule_name">排程: </string>
+    <string name="mode_setting">音效模式設定: </string>
+    <string name="enable_auto_reply">啟動自動簡訊回覆</string>
+    <string name="mute_all">完全靜音</string>
+    <string name="vibrate">震動</string>
+    <string name="normal_volumn">一般</string>
+    <string name="ringtonet">鈴聲: </string>
+    <string name="music_video">音樂 &amp; 影片: </string>
+    <string name="alarm">鬧鈴: </string>
+    <string name="notification_sound">通知鈴聲: </string>
+    <string name="cancel">取消</string>
+    <string name="edit_auto_reply">編輯自動回復簡訊</string>
+    <string name="err_reply_msg">尚未輸入有效簡訊，故無法啟動自動回復。</string>
+    <string name="wifi_alreadyt_exist">這個WIFI已經有摟~請在列表中點選它並編輯 。</string>
+    <string name="data_create_succesfully">檔案輸入成功!</string>
+    <string name="cant_plz_try_again">無法存檔，奇怪的錯誤。</string>
+    <string name="weifi_cant_be_empty">Wifi名子不能是空白的!</string>
+    <string name="cant_delete">不能刪除還未儲存的檔案。</string>
+    <string name="has_removed"> 已被移除。</string>
+    <string name="new_schedule_saved">新的排程已經儲存完畢!</string>
+    <string name="schedule_empty_err">排程名子不能是空白的。</string>
+    <string name="schedule_already_exist">這個排程名子已經有搂~請在列表中點選它並編輯。</string>
+    <string name="edit_btn">編輯</string>
+    <string name="start_time">起始時間: </string>
+    <string name="end_time">結束時間: </string>
+    
     <!-- auto reply dialog strings -->
     <string name="auto_replay_setup_dialog_title">自動簡訊回覆設定</string>
     <string name="save">存檔</string>

@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:text="SSID: "
+        android:text="@string/ssid"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
@@ -33,17 +33,17 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/SSIDTag"
         android:layout_below="@+id/editTextSSID"
-        android:text="Mode Setting:"
+        android:text="@string/mode_setting"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
    <TextView
-        android:id="@+id/ringtoneTag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/radioGroupMode"
-        android:layout_below="@+id/radioGroupMode"
-        android:text="Ringtone:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+       android:id="@+id/ringtoneTag"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignLeft="@+id/radioGroupMode"
+       android:layout_below="@+id/radioGroupMode"
+       android:text="@string/ringtonet"
+       android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <SeekBar
         android:id="@+id/ringtoneSeekBar"
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/ringtoneSeekBar"
         android:layout_below="@+id/ringtoneSeekBar"
-        android:text="Music &amp; Videos:"
+        android:text="@string/music_video"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <SeekBar
@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/musicSeekBar"
         android:layout_below="@+id/musicSeekBar"
-        android:text="Alarm:"
+        android:text="@string/alarm"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <SeekBar
@@ -97,19 +97,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Mute all" />
+            android:text="@string/mute_all" />
 
         <RadioButton
             android:id="@+id/radioVibrate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Vibrate" />
+            android:text="@string/vibrate" />
 
         <RadioButton
             android:id="@+id/radioNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Normal" />
+            android:text="@string/normal_volumn" />
     </RadioGroup>
 
     <Button
@@ -120,7 +120,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="15dp"
         android:layout_marginRight="15dp"
-        android:text="Save" />
+        android:text="@string/save" />
 
     <Button
         android:id="@+id/cancelWifiEdit"
@@ -129,7 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/alarmSeekBar"
         android:layout_alignTop="@+id/saveWifiEdit"
-        android:text="Cancel" />
+        android:text="@string/cancel" />
 
     <TextView
         android:id="@+id/notificationTag"
@@ -137,7 +137,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/alarmSeekBar"
         android:layout_below="@+id/alarmSeekBar"
-        android:text="Notification: "
+        android:text="@string/notification"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <SeekBar
@@ -155,13 +155,13 @@
         android:layout_alignBaseline="@+id/saveWifiEdit"
         android:layout_alignBottom="@+id/saveWifiEdit"
         android:layout_toLeftOf="@+id/saveWifiEdit"
-        android:text="Edit Auto-Reply" />
-    <CheckBox
+        android:text="@string/edit_auto_reply" />
+    <CheckBox
         android:id="@+id/enableAutoReplyCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/editTextSSID"
-        android:text="Enable Auto-Reply" />
+        android:text="@string/enable_auto_reply" />
 
 </RelativeLayout>

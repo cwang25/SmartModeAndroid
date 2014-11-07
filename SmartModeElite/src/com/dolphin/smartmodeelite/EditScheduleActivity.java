@@ -90,12 +90,12 @@ public class EditScheduleActivity extends Activity implements EditAutoReplyDialo
 			ScheduleRecord recordToEdit = (ScheduleRecord)this.getIntent().getParcelableExtra(MainActivity.KEY_SCHEDULE_RECORD);
 			String tag = this.getIntent().getStringExtra(MainActivity.NEW_TAG);
 			if(tag != null){
-				Toast.makeText(this.getBaseContext(), "Cannot delete the data that has not been stored to the database.", Toast.LENGTH_SHORT).show();
+				Toast.makeText(this.getBaseContext(), this.getBaseContext().getString(R.string.cant_delete), Toast.LENGTH_SHORT).show();
 			} else {
 				SmartModeDAO tmpDB = DAOSingleton.getInstance(this).getDb();
 				int rst = tmpDB.deleteFromSchedule(recordToEdit.getSchedulename());
 				if(rst > 0){
-					Toast.makeText(this.getBaseContext(), recordToEdit.getSchedulename()+" has been removed.", Toast.LENGTH_SHORT).show();
+					Toast.makeText(this.getBaseContext(), recordToEdit.getSchedulename()+this.getBaseContext().getString(R.string.has_removed), Toast.LENGTH_SHORT).show();
 				}else{
 					Toast.makeText(this.getBaseContext(), "Some thing wrong. \n"+recordToEdit.getSchedulename()+" has not been removed.", Toast.LENGTH_SHORT).show();
 				}
@@ -206,7 +206,7 @@ public class EditScheduleActivity extends Activity implements EditAutoReplyDialo
 					// TODO Auto-generated method stub
 					if(activity.autoReplyMsg.length() < 1){
 						arg0.setChecked(false);
-						activity.printMessage(activity, "Can't enable with empty message.  Please set up message before enabling auto reply.");
+						activity.printMessage(activity, activity.getString(R.string.err_reply_msg));
 					} else {
 						activity.setEnable(arg1);
 					}
@@ -295,14 +295,14 @@ public class EditScheduleActivity extends Activity implements EditAutoReplyDialo
 		    		//create new schedule record.
 		    		boolean succ = createNewScheduleRecord();
 		    		if(succ){
-			    		printMessage("New schedule has been saved successfully.");
+			    		printMessage(this.getActivity().getString(R.string.new_schedule_saved));
 		    			this.getActivity().finish();
 		    		}
 		    	}else{
 		    		//edit existing record schedule.
 		    		boolean succ = editExistingScheduleRecord();
 		    		if(succ){
-			    		printMessage("Schedule has been changed successfully.");
+			    		printMessage(this.getActivity().getString(R.string.new_schedule_saved));
 		    			this.getActivity().finish();
 		    		}
 		    	}
@@ -323,12 +323,12 @@ public class EditScheduleActivity extends Activity implements EditAutoReplyDialo
 		public boolean createNewScheduleRecord(){
 			SmartModeDAO db = DAOSingleton.getInstance(this.getActivity()).getDb();
 			if(this.editScheduleID.length() == 0){
-				printMessage("The schedule id cannot be empty.");
+				printMessage(this.getActivity().getString(R.string.schedule_empty_err));
 				return false;
 			}
 			int checkIfthere = db.getFromScheduleByName(this.editScheduleID.getText().toString()).size();
 			if(checkIfthere > 0){
-				printMessage("The schedule has already exist. Please edit the existing one instead.");
+				printMessage(this.getActivity().getString(R.string.schedule_already_exist));
 				return false;
 			}
 			int silence = 0;
@@ -367,7 +367,7 @@ public class EditScheduleActivity extends Activity implements EditAutoReplyDialo
 		public boolean editExistingScheduleRecord(){
 			SmartModeDAO db = DAOSingleton.getInstance(this.getActivity()).getDb();
 			if(this.editScheduleID.length() == 0){
-				printMessage("The schedule id cannot be empty.");
+				printMessage(this.getActivity().getString(R.string.schedule_empty_err));
 				return false;
 			}
 			int checkIfthere = db.getFromScheduleByName(this.editScheduleID.getText().toString()).size();

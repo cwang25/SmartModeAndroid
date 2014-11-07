@@ -30,6 +30,33 @@
     <string name="sensitive_mode_on">Sensitive mode on</string>
     <string name="sensitive_mode_off">Sensitive mode off</string>
     <string name="none_notification">None</string>
+    
+    <string name="ssid">Wifi name: </string>
+    <string name="schedule_name">Name: </string>
+    <string name="mode_setting">Mode Setting: </string>
+    <string name="enable_auto_reply">Enable Auto-Reply</string>
+    <string name="mute_all">Mute all</string>
+    <string name="vibrate">Vibrate</string>
+    <string name="normal_volumn">Normal</string>
+    <string name="ringtonet">Ringtone: </string>
+    <string name="music_video">Music &amp; Video: </string>
+    <string name="alarm">Alarm: </string>
+    <string name="notification_sound">Norification: </string>
+    <string name="cancel">Cancel</string>
+    <string name="edit_auto_reply">Edit Auto-Reply</string>
+    <string name="err_reply_msg">Can\'t enable with empty message.  Please set up message before enabling auto reply.</string>
+    <string name="wifi_alreadyt_exist">The ssid has already existed. Please edit the existing one instead.</string>
+    <string name="data_create_succesfully">Data created successfully!</string>
+    <string name="cant_plz_try_again">Can\'t save the data. Something wrong. Please try it again later.</string>
+    <string name="weifi_cant_be_empty">Wifi name can\'t be left with empty!</string>
+    <string name="cant_delete">Cannot delete the data that has not been stored to the database.</string>
+    <string name="has_removed"> has been removed.</string>
+    <string name="new_schedule_saved">New schedule has been saved successfully.</string>
+    <string name="schedule_empty_err">The schedule id cannot be empty.</string>
+    <string name="schedule_already_exist">The schedule has already exist. Please edit the existing one instead.</string>
+    <string name="edit_btn">Edit</string>
+    <string name="start_time">Start time: </string>
+    <string name="end_time">End time: </string>
     <!-- auto reply dialog strings -->
     <string name="auto_replay_setup_dialog_title">Auto Reply Setting</string>
     <string name="save">Save</string>
