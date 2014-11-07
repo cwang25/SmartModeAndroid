@@ -55,12 +55,12 @@
     <CheckBoxPreference
         android:defaultValue="false"
         android:key="@string/main_first_time_view_key"
-        android:summaryOff="Hide main overlay instruction"
-        android:summaryOn="Hide main overlay instruction" />
+        android:summaryOff="@string/hide_main_intro"
+        android:summaryOn="@string/hide_main_intro" />
     <CheckBoxPreference
         android:defaultValue="false"
         android:key="@string/list_first_time_view_key"
-        android:summaryOff="Hide wifi/schedule instruction"
-        android:summaryOn="Hide wifi/schedule instruction" />
+        android:summaryOff="@string/hide_list_intro"
+        android:summaryOn="@string/hide_list_intro" />
 
 </PreferenceScreen>
